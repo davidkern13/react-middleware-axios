@@ -47,3 +47,18 @@ export const AxiosRequest = (request) => {
       return data;
 }
 ```
+
+### action
+```
+import * as types from './action-types';
+
+export const callApi = () => {
+    return {
+        type: types.CALL_API_DATA,
+        payload: {
+            suffix: 'contact_list',
+            method: 'get'
+        }
+     }
+};
+```
