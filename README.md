@@ -1,5 +1,6 @@
 # react-middleware-axios
 
+### middleware
 ```
 import { CALL_API_DATA, GET_API_DATA } from '../../store/contact-list/action-types';
 import { API_URL } from '../../enum';
@@ -18,4 +19,31 @@ const apiMiddleware =  (store) =>  (next) =>  (action) => {
 }
 
 export default apiMiddleware;
+```
+
+
+### action-types
+```
+export const CALL_API_DATA = 'CALL_API_DATA';
+export const GET_API_DATA = 'GET_API_DATA';
+export const ERROR_API_DATA = 'ERROR_API_DATA';
+```
+
+### API_URL
+```
+export const API_URL = '___URL___';
+```
+
+### AxiosRequest
+```
+import axios from 'axios';
+
+export const AxiosRequest = (request) => {
+      const data = axios(request).then( res => {
+          return res.data;
+      }).catch(error => {
+          return error;
+      });
+      return data;
+}
 ```
