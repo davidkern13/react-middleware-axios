@@ -12,7 +12,7 @@ const apiMiddleware =  (store) =>  (next) =>  (action) => {
      if(action.type === CALL_API_DATA){
         const { suffix = '', method = 'get' } = action.payload;
 
-        AxiosRequest({method: method, url: API_URL + suffix, status: 400 }).then(res => {
+        AxiosRequest({method: method, url: API_URL + suffix }).then(res => {
             store.dispatch({ type: GET_API_DATA, payload: res })
         });
      }
